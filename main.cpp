@@ -100,6 +100,12 @@ void add_goat(list<Goat> &trip, string names[], string color[]) {
 
 }
 
-void display_trip() {
+void display_trip(list<Goat> trip) {
+
+    int goatIndex = 1;
+
+    cout << "Listing goats on trip: " << endl;
+    for (Goat g : trip)
+        cout << "   [" << goatIndex << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
     
 }
