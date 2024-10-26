@@ -52,6 +52,7 @@ int main() {
                 break;
             case 4:
                 program = false;
+                cout << "Thank you for using the Goat Manager 3001!" << endl;
                 break;
         };
     }
@@ -73,7 +74,7 @@ int main_menu(){
         cin >> userOption;
     }
 
-    cout << "Choice -->" << userOption << endl;
+    cout << "Choice --> " << userOption << endl;
     return userOption;
 }
 
@@ -102,7 +103,8 @@ void delete_goat(list<Goat> &trip) {
     int goatDelete;
 
     if (trip.size() < 1){
-        cout << ""
+        cout << "No goats to delete!" << endl;
+        return;
     }
 
     goatDelete = select_goat(trip) - 1;
@@ -136,8 +138,15 @@ void display_trip(list<Goat> trip) {
 
     int goatIndex = 1;
 
+    if (trip.size() < 1) {
+        cout << "No goats to display!" << endl;
+        return;
+    }
+
     cout << "Listing goats on trip: " << endl;
-    for (Goat g : trip)
+    for (Goat g : trip) {
         cout << "   [" << goatIndex << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
+        goatIndex++;
+    }
     
 }
