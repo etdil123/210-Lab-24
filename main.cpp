@@ -44,10 +44,28 @@ int main_menu(){
     cin >> userOption;
 
     while (userOption < 1 || userOption > 4) {
-        
+        cout << "Please make a selection between 1 and 4" << endl;
+        cout << menu;
         cin >> userOption;
     }
 
-
+    cout << "Choice -->" << userOption << endl;
     return userOption;
+}
+
+int select_goat(list<Goat> trip) {
+
+    int userSelection, goatIndex = 1;
+    cout << "Select a goat from below: " << endl;
+
+    for (Goat g : trip)
+        cout << "   [" << goatIndex << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
+
+    cin >> userSelection;
+
+    
+
+
+
+
 }
