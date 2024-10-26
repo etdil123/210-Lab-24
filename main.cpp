@@ -1,3 +1,4 @@
+// COMSC 210 | Lab 23 Goat Manager 3001 | Ethan Dilk
 #include <iostream>
 #include <fstream>
 #include <iomanip>
