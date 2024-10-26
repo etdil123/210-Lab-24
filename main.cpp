@@ -147,21 +147,26 @@ void add_goat(list<Goat> &trip, string names[], string color[]) {
     // Use parameter constructor to create a new Goat object
     Goat newGoat(randName, randAge, randColor);
 
+    // push back the new goat object into the trip list
     trip.push_back(newGoat);
     cout << "Goat has been added!" << endl;
 
 }
 
+// display_trip returns nothing - iterates through trip list and displays each goat and corresponsing information
 void display_trip(list<Goat> trip) {
 
     int goatIndex = 1;
 
+    // input validation - if there's no goats get out the function
     if (trip.size() < 1) {
         cout << "No goats to display!" << endl;
         return;
     }
 
     cout << "Listing goats on trip: " << endl;
+
+    // use range-based for loop to iterate trip list and display information about each goat
     for (Goat g : trip) {
         cout << "   [" << goatIndex << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
         goatIndex++;
