@@ -36,8 +36,18 @@ int main() {
     return 0;
 }
 
-int main(){
+int main_menu(){
+    int userOption = 0;
+    string menu =  "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\n";
+
+    cout << menu;
+    cin >> userOption;
+
+    while (userOption < 1 || userOption > 4) {
+        
+        cin >> userOption;
+    }
 
 
-    return 0;
+    return userOption;
 }
