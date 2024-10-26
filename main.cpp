@@ -83,3 +83,23 @@ void delete_goat(list<Goat> &trip) {
     cout << "Goat has been deleted!" << endl;
 
 }
+
+void add_goat(list<Goat> &trip, string names[], string color[]) {
+
+    int randNameIndex = (rand() % SZ_NAMES);
+    string randName = names[randNameIndex];
+
+    int randColorIndex = (rand() % SZ_COLORS);
+    string randColor = color[randColorIndex];
+
+    int randAge = (rand() % MAX_AGE);
+
+    Goat newGoat(randName, randAge, randColor);
+
+    trip.push_back(newGoat);
+
+}
+
+void display_trip() {
+    
+}
