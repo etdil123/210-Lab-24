@@ -63,9 +63,23 @@ int select_goat(list<Goat> trip) {
 
     cin >> userSelection;
 
-    
+    while (userSelection < 1 || userSelection > trip.size()) {
+        cout << "\nPlease make a valid goat selection: ";
+        cin >> userSelection;
+    }
 
+    return userSelection;
+}
 
+void delete_goat(list<Goat> &trip) {
 
+    int goatDelete;
+    goatDelete = select_goat(trip) - 1;
+
+    auto it = trip.begin();
+    advance(it, goatDelete);
+    trip.erase(it);
+
+    cout << "Goat has been deleted!" << endl;
 
 }
