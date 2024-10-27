@@ -31,7 +31,7 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    // intializing empty goat list
+    // intializing empty goat set 
     set<Goat> trip;
 
     bool program = true;
