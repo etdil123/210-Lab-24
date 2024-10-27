@@ -1,17 +1,18 @@
-// COMSC 210 | Lab 23 Goat Manager 3001 | Ethan Dilk
+// COMSC 210 | Lab 24 Goat Manager 3001 | Ethan Dilk
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <list>
+#include <set>
 #include "Goat.h"
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
 
-int select_goat(list<Goat> trip);
-void delete_goat(list<Goat> &trip);
-void add_goat(list<Goat> &trip, string [], string []);
-void display_trip(list<Goat> trip);
+int select_goat(set<Goat> trip);
+void delete_goat(set<Goat> &trip);
+void add_goat(set<Goat> &trip, string [], string []);
+void display_trip(set<Goat> trip);
 int main_menu();
 
 int main() {
@@ -31,7 +32,7 @@ int main() {
     fin1.close();
 
     // intializing empty goat list
-    list<Goat> trip;
+    set<Goat> trip;
 
     bool program = true;
     int userSelection;
@@ -86,7 +87,7 @@ int main_menu(){
 }
 
 // select_goat returns an integer which is the index of which goat they picked
-int select_goat(list<Goat> trip) {
+int select_goat(set<Goat> trip) {
 
     int userSelection, goatIndex = 1;
     cout << "Select a goat from below: " << endl;
@@ -109,7 +110,7 @@ int select_goat(list<Goat> trip) {
 }
 
 // delete_goat returns nothing - user selects goat they want to delete 
-void delete_goat(list<Goat> &trip) {
+void delete_goat(set<Goat> &trip) {
 
     int goatDelete;
     // if there are no goats in list - exit function
@@ -132,7 +133,7 @@ void delete_goat(list<Goat> &trip) {
 }
 
 // add_goat returns nothing - a random goat is added to the trip list 
-void add_goat(list<Goat> &trip, string names[], string color[]) {
+void add_goat(set<Goat> &trip, string names[], string color[]) {
 
     // select random index in names and in color arrays
     int randNameIndex = (rand() % SZ_NAMES);
@@ -148,13 +149,13 @@ void add_goat(list<Goat> &trip, string names[], string color[]) {
     Goat newGoat(randName, randAge, randColor);
 
     // push back the new goat object into the trip list
-    trip.push_back(newGoat);
+    trip.insert(newGoat);
     cout << "Goat has been added!" << endl;
 
 }
 
 // display_trip returns nothing - iterates through trip list and displays each goat and corresponsing information
-void display_trip(list<Goat> trip) {
+void display_trip(set<Goat> trip) {
 
     int goatIndex = 1;
 
